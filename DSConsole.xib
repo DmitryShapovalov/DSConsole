@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DSConsole">
+            <connections>
+                <outlet property="reloadButton" destination="dqI-SO-HYP" id="kB7-4Z-1UX"/>
+                <outlet property="searchField" destination="09X-bK-KAn" id="KRU-g1-AU0"/>
+                <outlet property="textView" destination="fic-5g-gif" id="GmF-4J-Uiq"/>
+                <outlet property="view" destination="Zed-qK-qoL" id="dwi-hX-WKo"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Zed-qK-qoL">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4S-Sv-brm">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="17"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Console" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vG-Xb-dUl">
+                            <rect key="frame" x="13" y="8" width="349" height="10"/>
+                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="11"/>
+                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="8vG-Xb-dUl" secondAttribute="bottom" constant="-1" id="4qZ-xV-CxY"/>
+                        <constraint firstAttribute="trailing" secondItem="8vG-Xb-dUl" secondAttribute="trailing" constant="13" id="LpF-ca-3Jd"/>
+                        <constraint firstItem="8vG-Xb-dUl" firstAttribute="top" secondItem="r4S-Sv-brm" secondAttribute="top" constant="8" id="RUW-iJ-Jth"/>
+                        <constraint firstItem="8vG-Xb-dUl" firstAttribute="leading" secondItem="r4S-Sv-brm" secondAttribute="leading" constant="13" id="TQ3-Ht-EMm"/>
+                    </constraints>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7BI-OG-mjQ">
+                    <rect key="frame" x="0.0" y="17" width="375" height="44"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <items>
+                        <barButtonItem systemItem="search" id="2Hu-By-et1">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="searchAction:" destination="-1" id="ZKc-cb-y5Z"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" id="Lu9-UM-EXL">
+                            <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="09X-bK-KAn">
+                                <rect key="frame" x="44" y="7" width="322" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="search"/>
+                                <connections>
+                                    <action selector="searchAction:" destination="-1" eventType="editingDidEndOnExit" id="Th2-4v-Be2"/>
+                                    <action selector="searchEditingDidBegin:" destination="-1" eventType="editingDidBegin" id="1lt-c5-3bK"/>
+                                    <action selector="searchEditingDidEnd:" destination="-1" eventType="editingDidEnd" id="JgY-iT-gyh"/>
+                                </connections>
+                            </textField>
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </items>
+                    <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </toolbar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3d-8G-6bE">
+                    <rect key="frame" x="0.0" y="61" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Yqk-RO-Lra"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fic-5g-gif">
+                    <rect key="frame" x="0.0" y="62" width="375" height="561"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" red="0.0" green="0.5350454828175395" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" flightNumber="YES" lookupSuggestion="YES"/>
+                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hD4-uu-yag">
+                    <rect key="frame" x="0.0" y="622" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="cee-qX-Ptx"/>
+                    </constraints>
+                </view>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yE-ww-kYe">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <items>
+                        <barButtonItem systemItem="trash" id="q9S-Br-km9">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="cleanHistoryAction:" destination="-1" id="nFb-9O-Gl3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="nHC-pa-bWS"/>
+                        <barButtonItem title=" ◄ " id="GBb-U3-5zo">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="searchBackwardAction:" destination="-1" id="63T-It-gJZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="VGQ-Ub-IW6"/>
+                        <barButtonItem systemItem="refresh" id="dqI-SO-HYP">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="refreshAction:" destination="-1" id="SZi-bE-KHM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="47w-Ek-ien"/>
+                        <barButtonItem title=" ► " id="mE1-rZ-L87">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="searchAction:" destination="-1" id="3uv-QA-trN"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="mJh-CX-wE9"/>
+                        <barButtonItem systemItem="stop" id="6tx-xI-kIT">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="closeAction:" destination="-1" id="bSN-g2-wSx"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                    <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                </toolbar>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="r4S-Sv-brm" firstAttribute="top" secondItem="Zed-qK-qoL" secondAttribute="top" id="1HS-PA-tGY"/>
+                <constraint firstItem="r4S-Sv-brm" firstAttribute="leading" secondItem="Zed-qK-qoL" secondAttribute="leading" id="80z-Ap-DwX"/>
+                <constraint firstItem="7BI-OG-mjQ" firstAttribute="top" secondItem="r4S-Sv-brm" secondAttribute="bottom" id="8gM-xV-eM0"/>
+                <constraint firstItem="hD4-uu-yag" firstAttribute="leading" secondItem="Zed-qK-qoL" secondAttribute="leading" id="D6k-Ns-1K8"/>
+                <constraint firstItem="s3d-8G-6bE" firstAttribute="leading" secondItem="Zed-qK-qoL" secondAttribute="leading" id="FUX-Nw-zhh"/>
+                <constraint firstItem="7BI-OG-mjQ" firstAttribute="top" secondItem="Zed-qK-qoL" secondAttribute="top" constant="17" id="FxU-hw-Bla"/>
+                <constraint firstAttribute="trailing" secondItem="s3d-8G-6bE" secondAttribute="trailing" id="Hto-QE-qMo"/>
+                <constraint firstAttribute="bottom" secondItem="3yE-ww-kYe" secondAttribute="bottom" id="OI3-2o-q6i"/>
+                <constraint firstAttribute="trailing" secondItem="fic-5g-gif" secondAttribute="trailing" id="YH0-5O-yBi"/>
+                <constraint firstAttribute="trailing" secondItem="3yE-ww-kYe" secondAttribute="trailing" id="aVC-lz-Y5d"/>
+                <constraint firstItem="fic-5g-gif" firstAttribute="leading" secondItem="Zed-qK-qoL" secondAttribute="leading" id="ahw-xY-C2F"/>
+                <constraint firstItem="hD4-uu-yag" firstAttribute="top" secondItem="fic-5g-gif" secondAttribute="bottom" constant="-1" id="dRB-3s-4X0"/>
+                <constraint firstItem="7BI-OG-mjQ" firstAttribute="leading" secondItem="Zed-qK-qoL" secondAttribute="leading" id="djk-qs-Qra"/>
+                <constraint firstAttribute="trailing" secondItem="r4S-Sv-brm" secondAttribute="trailing" id="eZ2-G9-m0O"/>
+                <constraint firstItem="s3d-8G-6bE" firstAttribute="top" secondItem="7BI-OG-mjQ" secondAttribute="bottom" id="jHH-Rr-kD1"/>
+                <constraint firstAttribute="trailing" secondItem="7BI-OG-mjQ" secondAttribute="trailing" id="n74-49-9oc"/>
+                <constraint firstItem="3yE-ww-kYe" firstAttribute="top" secondItem="hD4-uu-yag" secondAttribute="bottom" id="o2b-fl-n2q"/>
+                <constraint firstItem="3yE-ww-kYe" firstAttribute="leading" secondItem="Zed-qK-qoL" secondAttribute="leading" id="t9S-ct-1vP"/>
+                <constraint firstAttribute="trailing" secondItem="hD4-uu-yag" secondAttribute="trailing" id="ufD-Qo-Hkg"/>
+                <constraint firstItem="fic-5g-gif" firstAttribute="top" secondItem="s3d-8G-6bE" secondAttribute="bottom" id="yy9-NW-j6x"/>
+            </constraints>
+            <point key="canvasLocation" x="387.5" y="209.5"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
